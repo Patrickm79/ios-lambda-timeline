@@ -32,6 +32,7 @@
 		DB4D7E9924858E3D00E6B776 /* ImageFiltering.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D7E9824858E3D00E6B776 /* ImageFiltering.swift */; };
 		DB4D7E9B24858F8F00E6B776 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D7E9A24858F8F00E6B776 /* UIImageExtensions.swift */; };
 		DB4D7E9D24859F9C00E6B776 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB4D7E9C24859F9C00E6B776 /* GoogleService-Info.plist */; };
+		DB4D7E9F24870B5C00E6B776 /* AudioRecordingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D7E9E24870B5C00E6B776 /* AudioRecordingVC.swift */; };
 		E453457955DF907FCBD117F1 /* Pods_LambdaTimeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39CACB677861CF84322FB5 /* Pods_LambdaTimeline.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		DB4D7E9824858E3D00E6B776 /* ImageFiltering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFiltering.swift; sourceTree = "<group>"; };
 		DB4D7E9A24858F8F00E6B776 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		DB4D7E9C24859F9C00E6B776 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DB4D7E9E24870B5C00E6B776 /* AudioRecordingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				46A0366921700F5100E7FF73 /* PostsCollectionViewController.swift */,
 				46CFE6F421707D0000E7FF73 /* ImagePostViewController.swift */,
 				46D571F72173FC2700E7FF73 /* ImagePostDetailTableViewController.swift */,
+				DB4D7E9E24870B5C00E6B776 /* AudioRecordingVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 				46CFE7032171572600E7FF73 /* ImagePostCollectionViewCell.swift in Sources */,
 				4646379C2170091A00E7FF73 /* PostController.swift in Sources */,
 				464637992170048900E7FF73 /* FirebaseConvertible.swift in Sources */,
+				DB4D7E9F24870B5C00E6B776 /* AudioRecordingVC.swift in Sources */,
 				46A0366A21700F5100E7FF73 /* PostsCollectionViewController.swift in Sources */,
 				46D571F52173CF3E00E7FF73 /* UIImage+Ratio.swift in Sources */,
 				46463792216FFDD900E7FF73 /* Comment.swift in Sources */,

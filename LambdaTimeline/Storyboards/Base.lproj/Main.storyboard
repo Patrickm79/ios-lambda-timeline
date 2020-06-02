@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xB5-Kl-GM2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -439,11 +438,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="ZF5-WY-6Y2">
-                        <barButtonItem key="rightBarButtonItem" title="Comment" id="xrT-JD-ey3">
-                            <connections>
-                                <action selector="createComment:" destination="OyM-8q-Icp" id="2IY-cQ-DLq"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Comment" id="xrT-JD-ey3">
+                                <connections>
+                                    <action selector="createComment:" destination="OyM-8q-Icp" id="2IY-cQ-DLq"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="recordingtape" catalog="system" id="5eu-28-MPo">
+                                <connections>
+                                    <segue destination="nZV-ya-XDd" kind="popoverPresentation" popoverAnchorBarButtonItem="5eu-28-MPo" id="h9I-IE-1k4">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="uQC-8y-kuu" id="OBX-uv-64E"/>
@@ -456,5 +464,92 @@
             </objects>
             <point key="canvasLocation" x="1968.8" y="472.71364317841085"/>
         </scene>
+        <!--Audio RecordingVC-->
+        <scene sceneID="QvP-Bx-4KC">
+            <objects>
+                <viewController id="nZV-ya-XDd" customClass="AudioRecordingVC" customModule="LambdaTimeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uPR-6o-uEm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gmZ-yH-NJp">
+                                <rect key="frame" x="8" y="766" width="398" height="22"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa8-HI-kds">
+                                        <rect key="frame" x="0.0" y="0.0" width="189" height="22"/>
+                                        <state key="normal" image="play.fill" catalog="system">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="togglePlayback:" destination="nZV-ya-XDd" eventType="touchUpInside" id="Qxb-OL-IY5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dma-ab-a9d">
+                                        <rect key="frame" x="209" y="0.0" width="189" height="22"/>
+                                        <state key="normal" image="mic.fill" catalog="system">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="toggleRecording:" destination="nZV-ya-XDd" eventType="touchUpInside" id="20l-69-gjw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="vj5-pf-oIo">
+                                <rect key="frame" x="8" y="728" width="398" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwm-Qy-PB5">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Tod-dJ-Gwk">
+                                        <rect key="frame" x="133.5" y="0.0" width="131" height="31"/>
+                                        <connections>
+                                            <action selector="updateCurrentTime:" destination="nZV-ya-XDd" eventType="valueChanged" id="sdc-dl-ms8"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgz-Wm-kyj">
+                                        <rect key="frame" x="270.5" y="0.0" width="127.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jgz-Wm-kyj" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Tod-dJ-Gwk" secondAttribute="trailing" constant="8" id="3Ki-D8-0kc"/>
+                                    <constraint firstItem="Tod-dJ-Gwk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Mwm-Qy-PB5" secondAttribute="trailing" constant="8" id="Vk5-mM-sGG"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vj5-pf-oIo" secondAttribute="trailing" constant="8" id="902-iQ-elo"/>
+                            <constraint firstItem="vj5-pf-oIo" firstAttribute="leading" secondItem="eQ6-v1-tMN" secondAttribute="leading" constant="8" id="9z4-hW-hig"/>
+                            <constraint firstItem="eQ6-v1-tMN" firstAttribute="trailing" secondItem="gmZ-yH-NJp" secondAttribute="trailing" constant="8" id="T7e-gt-PCW"/>
+                            <constraint firstItem="gmZ-yH-NJp" firstAttribute="leading" secondItem="eQ6-v1-tMN" secondAttribute="leading" constant="8" id="XBN-md-Ge1"/>
+                            <constraint firstItem="eQ6-v1-tMN" firstAttribute="bottom" secondItem="gmZ-yH-NJp" secondAttribute="bottom" constant="20" id="rtQ-dj-5Nk"/>
+                            <constraint firstItem="gmZ-yH-NJp" firstAttribute="top" secondItem="vj5-pf-oIo" secondAttribute="bottom" constant="8" id="vse-Fh-Ht1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eQ6-v1-tMN"/>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="fa8-HI-kds" id="2NC-lT-bn1"/>
+                        <outlet property="recordButton" destination="Dma-ab-a9d" id="VgI-sO-TXQ"/>
+                        <outlet property="timeElapsedLabel" destination="Mwm-Qy-PB5" id="Kna-RR-Xbh"/>
+                        <outlet property="timeRemainingLabel" destination="jgz-Wm-kyj" id="Fky-pO-Ogr"/>
+                        <outlet property="timeSlider" destination="Tod-dJ-Gwk" id="lrI-9b-37z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4A1-p1-ZHg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2669.5652173913045" y="471.42857142857139"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="mic.fill" catalog="system" width="108" height="128"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="recordingtape" catalog="system" width="128" height="60"/>
+    </resources>
 </document>
