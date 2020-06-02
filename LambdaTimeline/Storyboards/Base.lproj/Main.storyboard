@@ -480,6 +480,7 @@
                                         <state key="normal" image="play.fill" catalog="system">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <state key="selected" image="pause.fill" catalog="system"/>
                                         <connections>
                                             <action selector="togglePlayback:" destination="nZV-ya-XDd" eventType="touchUpInside" id="Qxb-OL-IY5"/>
                                         </connections>
@@ -489,6 +490,7 @@
                                         <state key="normal" image="mic.fill" catalog="system">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <state key="selected" image="mic.circle.fill" catalog="system"/>
                                         <connections>
                                             <action selector="toggleRecording:" destination="nZV-ya-XDd" eventType="touchUpInside" id="20l-69-gjw"/>
                                         </connections>
@@ -548,7 +550,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mic.circle.fill" catalog="system" width="128" height="121"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
+        <image name="pause.fill" catalog="system" width="116" height="128"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="recordingtape" catalog="system" width="128" height="60"/>
     </resources>
