@@ -32,7 +32,7 @@ class ImagePostViewController: ShiftableViewController {
         setImageViewHeight(with: image.ratio)
         
         originalImage = image
-
+        
         chooseImageButton.setTitle("", for: [])
     }
     
@@ -43,12 +43,12 @@ class ImagePostViewController: ShiftableViewController {
             return
         }
         DispatchQueue.main.async {
-        let imagePicker = UIImagePickerController()
-        
-        imagePicker.delegate = self
-        
-        imagePicker.sourceType = .photoLibrary
-
+            let imagePicker = UIImagePickerController()
+            
+            imagePicker.delegate = self
+            
+            imagePicker.sourceType = .photoLibrary
+            
             self.present(imagePicker, animated: true, completion: nil)
         }
     }
@@ -60,8 +60,8 @@ class ImagePostViewController: ShiftableViewController {
         
         guard let imageData = imageView.image?.jpegData(compressionQuality: 0.1),
             let title = titleTextField.text, title != "" else {
-            presentInformationalAlertController(title: "Uh-oh", message: "Make sure that you add a photo and a caption before posting.")
-            return
+                presentInformationalAlertController(title: "Uh-oh", message: "Make sure that you add a photo and a caption before posting.")
+                return
         }
         
         postController.createPost(with: title, ofType: .image, mediaData: imageData, ratio: imageView.image?.ratio) { (success) in
@@ -150,7 +150,7 @@ class ImagePostViewController: ShiftableViewController {
         
         //Render image
         guard let outputCGImage = context.createCGImage(sharpenFilterImage, from: CGRect(origin: .zero, size: image.size)) else { return nil }
-                
+        
         return UIImage(cgImage: outputCGImage)
     }
     
@@ -227,7 +227,7 @@ class ImagePostViewController: ShiftableViewController {
 extension ImagePostViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
+        
         chooseImageButton.setTitle("", for: [])
         
         picker.dismiss(animated: true, completion: nil)

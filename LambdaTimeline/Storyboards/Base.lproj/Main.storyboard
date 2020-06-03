@@ -451,12 +451,19 @@
                                     </segue>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="Item" image="video.fill" catalog="system" id="9cz-qe-xfD">
+                                <connections>
+                                    <action selector="videoButtonTapped:" destination="OyM-8q-Icp" id="QhL-91-Y4O"/>
+                                    <segue destination="UTr-sP-aJ6" kind="show" identifier="CameraSetupSegue" id="Upt-28-sfb"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="authorLabel" destination="uQC-8y-kuu" id="OBX-uv-64E"/>
                         <outlet property="imageView" destination="Q0L-w5-qUw" id="0v7-ZB-mgi"/>
                         <outlet property="imageViewAspectRatioConstraint" destination="y1B-iX-x3e" id="wIt-kh-Tzd"/>
+                        <outlet property="recordVideoButton" destination="9cz-qe-xfD" id="LE6-WN-iCE"/>
                         <outlet property="titleLabel" destination="jyy-BX-c2c" id="UEd-xO-ipC"/>
                     </connections>
                 </tableViewController>
@@ -477,6 +484,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fa8-HI-kds">
                                         <rect key="frame" x="0.0" y="0.0" width="189" height="22"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="play.fill" catalog="system">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -487,6 +495,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dma-ab-a9d">
                                         <rect key="frame" x="209" y="0.0" width="189" height="22"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" image="mic.fill" catalog="system">
                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -546,14 +555,77 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4A1-p1-ZHg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2669.5652173913045" y="471.42857142857139"/>
+            <point key="canvasLocation" x="3367" y="899"/>
+        </scene>
+        <!--Camera Setup View Controller-->
+        <scene sceneID="rtw-b9-yTX">
+            <objects>
+                <viewController id="UTr-sP-aJ6" customClass="CameraSetupViewController" customModule="LambdaTimeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hfV-TO-5Mp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="WKf-XL-nuP"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="goB-X0-2YU"/>
+                    <connections>
+                        <segue destination="1I0-NO-hO4" kind="show" identifier="ShowCamera" id="Bj2-0x-k7D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q6a-Zg-s35" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2833" y="263"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="4YH-wX-RTC">
+            <objects>
+                <viewController id="1I0-NO-hO4" customClass="CameraViewController" customModule="LambdaTimeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fMa-40-1Io">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wng-Mi-U6u" customClass="CameraPreviewView" customModule="LambdaTimeline" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taj-OG-AbM">
+                                        <rect key="frame" x="149" y="608" width="116" height="116"/>
+                                        <state key="normal" image="Record"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="taj-OG-AbM" secondAttribute="bottom" constant="50" id="2kF-Na-sJf"/>
+                                    <constraint firstItem="taj-OG-AbM" firstAttribute="centerX" secondItem="wng-Mi-U6u" secondAttribute="centerX" id="e6B-pf-Hwe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gyH-PM-5gM" firstAttribute="bottom" secondItem="wng-Mi-U6u" secondAttribute="bottom" id="JIQ-sj-yWM"/>
+                            <constraint firstItem="wng-Mi-U6u" firstAttribute="leading" secondItem="gyH-PM-5gM" secondAttribute="leading" id="jeh-qL-B35"/>
+                            <constraint firstItem="gyH-PM-5gM" firstAttribute="trailing" secondItem="wng-Mi-U6u" secondAttribute="trailing" id="oIv-YF-WSV"/>
+                            <constraint firstItem="wng-Mi-U6u" firstAttribute="top" secondItem="gyH-PM-5gM" secondAttribute="top" id="wrq-A8-OXr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gyH-PM-5gM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="iap-xg-HyD"/>
+                    <connections>
+                        <outlet property="cameraView" destination="wng-Mi-U6u" id="PIg-nq-lS6"/>
+                        <outlet property="recordButton" destination="taj-OG-AbM" id="F7M-qf-R6g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ir-BP-v6L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3703" y="263"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Record" width="116" height="116"/>
         <image name="mic.circle.fill" catalog="system" width="128" height="121"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
         <image name="pause.fill" catalog="system" width="116" height="128"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="recordingtape" catalog="system" width="128" height="60"/>
+        <image name="video.fill" catalog="system" width="128" height="82"/>
     </resources>
 </document>

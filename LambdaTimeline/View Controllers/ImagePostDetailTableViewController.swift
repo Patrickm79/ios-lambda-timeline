@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ImagePostDetailTableViewController: UITableViewController {
     
@@ -29,6 +30,10 @@ class ImagePostDetailTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
+    
+    @IBAction func videoButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "CameraSetupSegue", sender: recordVideoButton)
+    }
     
     @IBAction func createComment(_ sender: Any) {
         
@@ -85,4 +90,5 @@ class ImagePostDetailTableViewController: UITableViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var imageViewAspectRatioConstraint: NSLayoutConstraint!
+    @IBOutlet weak var recordVideoButton: UIBarButtonItem!
 }

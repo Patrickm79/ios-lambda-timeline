@@ -100,12 +100,12 @@ class AudioRecordingVC: UIViewController {
         return audioPlayer?.isPlaying ?? false
     }
     
-func prepareAudioSession() throws {
-     let session = AVAudioSession.sharedInstance()
-     try session.setCategory(.playAndRecord, options: [.defaultToSpeaker])
-     try session.setActive(true, options: [])
-    
-     }
+    func prepareAudioSession() throws {
+        let session = AVAudioSession.sharedInstance()
+        try session.setCategory(.playAndRecord, options: [.defaultToSpeaker])
+        try session.setActive(true, options: [])
+        
+    }
     
     func togglePlayback() {
         if isPlaying {
@@ -242,7 +242,7 @@ extension AudioRecordingVC: AVAudioRecorderDelegate {
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if let recordingURL = recordingURL {
-        print("Finished recording and saving: \(recordingURL.path)")
+            print("Finished recording and saving: \(recordingURL.path)")
             
             audioPlayer = try? AVAudioPlayer(contentsOf: recordingURL) // TODO: Errors
         }

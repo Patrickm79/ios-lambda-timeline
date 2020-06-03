@@ -33,6 +33,10 @@
 		DB4D7E9B24858F8F00E6B776 /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D7E9A24858F8F00E6B776 /* UIImageExtensions.swift */; };
 		DB4D7E9D24859F9C00E6B776 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB4D7E9C24859F9C00E6B776 /* GoogleService-Info.plist */; };
 		DB4D7E9F24870B5C00E6B776 /* AudioRecordingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D7E9E24870B5C00E6B776 /* AudioRecordingVC.swift */; };
+		DB85DAD0248827690049D1A0 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85DACF248827690049D1A0 /* CameraVC.swift */; };
+		DB85DAD2248827780049D1A0 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85DAD1248827780049D1A0 /* VideoPlayerView.swift */; };
+		DB85DAD4248827820049D1A0 /* CameraPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85DAD3248827820049D1A0 /* CameraPlayerView.swift */; };
+		DB85DAD624882ECE0049D1A0 /* CamSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85DAD524882ECE0049D1A0 /* CamSetupVC.swift */; };
 		E453457955DF907FCBD117F1 /* Pods_LambdaTimeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39CACB677861CF84322FB5 /* Pods_LambdaTimeline.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +72,10 @@
 		DB4D7E9A24858F8F00E6B776 /* UIImageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		DB4D7E9C24859F9C00E6B776 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB4D7E9E24870B5C00E6B776 /* AudioRecordingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecordingVC.swift; sourceTree = "<group>"; };
+		DB85DACF248827690049D1A0 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		DB85DAD1248827780049D1A0 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		DB85DAD3248827820049D1A0 /* CameraPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPlayerView.swift; sourceTree = "<group>"; };
+		DB85DAD524882ECE0049D1A0 /* CamSetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamSetupVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				DB4D7E9C24859F9C00E6B776 /* GoogleService-Info.plist */,
+				DB85DACE2488273F0049D1A0 /* Video Recorder */,
 				DB4D7E9724858E2800E6B776 /* UIImageFilters */,
 				46CFE7042171572900E7FF73 /* Views */,
 				46A0366B21700F6100E7FF73 /* View Controllers */,
@@ -229,6 +238,17 @@
 				DB4D7E9A24858F8F00E6B776 /* UIImageExtensions.swift */,
 			);
 			path = UIImageFilters;
+			sourceTree = "<group>";
+		};
+		DB85DACE2488273F0049D1A0 /* Video Recorder */ = {
+			isa = PBXGroup;
+			children = (
+				DB85DACF248827690049D1A0 /* CameraVC.swift */,
+				DB85DAD1248827780049D1A0 /* VideoPlayerView.swift */,
+				DB85DAD3248827820049D1A0 /* CameraPlayerView.swift */,
+				DB85DAD524882ECE0049D1A0 /* CamSetupVC.swift */,
+			);
+			path = "Video Recorder";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -381,13 +401,17 @@
 				46CFE7012171559500E7FF73 /* FetchMediaOperation.swift in Sources */,
 				46D571F82173FC2700E7FF73 /* ImagePostDetailTableViewController.swift in Sources */,
 				46CFE7032171572600E7FF73 /* ImagePostCollectionViewCell.swift in Sources */,
+				DB85DAD0248827690049D1A0 /* CameraVC.swift in Sources */,
 				4646379C2170091A00E7FF73 /* PostController.swift in Sources */,
 				464637992170048900E7FF73 /* FirebaseConvertible.swift in Sources */,
+				DB85DAD624882ECE0049D1A0 /* CamSetupVC.swift in Sources */,
+				DB85DAD4248827820049D1A0 /* CameraPlayerView.swift in Sources */,
 				DB4D7E9F24870B5C00E6B776 /* AudioRecordingVC.swift in Sources */,
 				46A0366A21700F5100E7FF73 /* PostsCollectionViewController.swift in Sources */,
 				46D571F52173CF3E00E7FF73 /* UIImage+Ratio.swift in Sources */,
 				46463792216FFDD900E7FF73 /* Comment.swift in Sources */,
 				46CFE6F721707FA600E7FF73 /* UIViewController+InformationalAlert.swift in Sources */,
+				DB85DAD2248827780049D1A0 /* VideoPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
