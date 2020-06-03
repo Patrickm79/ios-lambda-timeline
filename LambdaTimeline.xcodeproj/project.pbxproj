@@ -37,6 +37,8 @@
 		DB85DAD2248827780049D1A0 /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85DAD1248827780049D1A0 /* VideoPlayerView.swift */; };
 		DB85DAD4248827820049D1A0 /* CameraPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85DAD3248827820049D1A0 /* CameraPlayerView.swift */; };
 		DB85DAD624882ECE0049D1A0 /* CamSetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85DAD524882ECE0049D1A0 /* CamSetupVC.swift */; };
+		DB85DAD8248864C10049D1A0 /* AudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85DAD7248864C10049D1A0 /* AudioFile.swift */; };
+		DB85DADA248864C60049D1A0 /* VideoFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB85DAD9248864C60049D1A0 /* VideoFile.swift */; };
 		E453457955DF907FCBD117F1 /* Pods_LambdaTimeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39CACB677861CF84322FB5 /* Pods_LambdaTimeline.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		DB85DAD1248827780049D1A0 /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		DB85DAD3248827820049D1A0 /* CameraPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPlayerView.swift; sourceTree = "<group>"; };
 		DB85DAD524882ECE0049D1A0 /* CamSetupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamSetupVC.swift; sourceTree = "<group>"; };
+		DB85DAD7248864C10049D1A0 /* AudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioFile.swift; sourceTree = "<group>"; };
+		DB85DAD9248864C60049D1A0 /* VideoFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,8 @@
 				4646378F216FFD1B00E7FF73 /* Post.swift */,
 				46CFE6FA21714E6100E7FF73 /* Author.swift */,
 				46463791216FFDD900E7FF73 /* Comment.swift */,
+				DB85DAD7248864C10049D1A0 /* AudioFile.swift */,
+				DB85DAD9248864C60049D1A0 /* VideoFile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -387,6 +393,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46A0366D2170158900E7FF73 /* SignInViewController.swift in Sources */,
+				DB85DADA248864C60049D1A0 /* VideoFile.swift in Sources */,
 				46CFE6FB21714E6100E7FF73 /* Author.swift in Sources */,
 				46CFE6F92170862C00E7FF73 /* ShiftableViewController.swift in Sources */,
 				4646377C216FDE4B00E7FF73 /* AppDelegate.swift in Sources */,
@@ -395,6 +402,7 @@
 				46CFE6FF2171556D00E7FF73 /* ConcurrentOperation.swift in Sources */,
 				46463790216FFD1B00E7FF73 /* Post.swift in Sources */,
 				46CFE6F32170757F00E7FF73 /* User+DictionaryRepresentation.swift in Sources */,
+				DB85DAD8248864C10049D1A0 /* AudioFile.swift in Sources */,
 				DB4D7E9B24858F8F00E6B776 /* UIImageExtensions.swift in Sources */,
 				46D571F32172D43B00E7FF73 /* Cache.swift in Sources */,
 				DB4D7E9924858E3D00E6B776 /* ImageFiltering.swift in Sources */,

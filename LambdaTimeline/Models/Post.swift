@@ -15,14 +15,17 @@ enum MediaType: String {
 
 class Post {
     
-    init(title: String, mediaURL: URL, ratio: CGFloat? = nil, author: Author, timestamp: Date = Date()) {
+    init(title: String, mediaURL: URL, ratio: CGFloat? = nil, author: Author, timestamp: Date = Date(), audioComment: Data) {
         self.mediaURL = mediaURL
         self.ratio = ratio
         self.mediaType = .image
         self.author = author
         self.comments = [Comment(text: title, author: author)]
         self.timestamp = timestamp
+        self.audioComment = [AudioComment(audio: audioComment, author: author)]
     }
+    
+    
     
     init?(dictionary: [String : Any], id: String) {
         guard let mediaURLString = dictionary[Post.mediaKey] as? String,
@@ -32,7 +35,8 @@ class Post {
             let authorDictionary = dictionary[Post.authorKey] as? [String: Any],
             let author = Author(dictionary: authorDictionary),
             let timestampTimeInterval = dictionary[Post.timestampKey] as? TimeInterval,
-            let captionDictionaries = dictionary[Post.commentsKey] as? [[String: Any]] else { return nil }
+            let captionDictionaries = dictionary[Post.commentsKey] as? [[String: Any]],
+            let audioCommentDictionary = dictionary[Post.audioCommentKey] as? [[String: Data]] else { return nil }
         
         self.mediaURL = mediaURL
         self.mediaType = mediaType
@@ -41,6 +45,7 @@ class Post {
         self.timestamp = Date(timeIntervalSince1970: timestampTimeInterval)
         self.comments = captionDictionaries.compactMap({ Comment(dictionary: $0) })
         self.id = id
+        self.audioComment = audioCommentDictionary.compactMap({ AudioComment(dictionary: $0) })
     }
     
     var dictionaryRepresentation: [String : Any] {
@@ -64,6 +69,7 @@ class Post {
     var comments: [Comment]
     var id: String?
     var ratio: CGFloat?
+    var audioComment: [AudioComment]
     
     var title: String? {
         return comments.first?.text
@@ -76,4 +82,5 @@ class Post {
     static private let commentsKey = "comments"
     static private let timestampKey = "timestamp"
     static private let idKey = "id"
+    static private let audioCommentKey = "audioComment"
 }
